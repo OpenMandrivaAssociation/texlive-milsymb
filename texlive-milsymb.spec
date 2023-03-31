@@ -1,6 +1,6 @@
 Name:		texlive-milsymb
 Version:	54361
-Release:	1
+Release:	2
 Summary:	LaTeX package for TikZ based drawing of military symbols as per NATO APP-6(C)
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/milsymb
