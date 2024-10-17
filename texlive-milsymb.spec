@@ -3,7 +3,7 @@ Version:	66697
 Release:	1
 Summary:	LaTeX package for TikZ based drawing of military symbols as per NATO APP-6(C)
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/milsymb
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/milsymb
 License:	cc-by-sa-4
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/milsymb.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/milsymb.doc.r%{version}.tar.xz
