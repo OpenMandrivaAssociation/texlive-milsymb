@@ -1,40 +1,25 @@
-Name:		texlive-milsymb
-Version:	66697
-Release:	1
+%global tl_name milsymb
+%global tl_revision 78431
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	1.03
+Release:	%{tl_revision}.1
 Summary:	LaTeX package for TikZ based drawing of military symbols as per NATO APP-6(C)
 Group:		Publishing
-URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/milsymb
+URL:		https://www.ctan.org/tex-archive/graphics/pgf/contrib/milsymb
 License:	cc-by-sa-4
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/milsymb.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/milsymb.doc.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/milsymb.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/milsymb.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-The package offers commands to draw military symbols as per
-NATO APP-6(C) https://www.awl.edu.pl/images/en/APP_6_C.pdf. It
-has a set of commands for drawing all symbols found in the
-document up to the control measures, as well as support for
-custom non-standard symbols. Control measures are planned to be
-included in a future release.
+The package offers commands to draw military symbols as per NATO
+APP-6(C) https://web.archive.org/web/20150921231042/http://armawiki.zumo
+rc.de/files/NATO/APP-6(C).pdf . It has a set of commands for drawing all
+symbols found in the document up to the control measures, as well as
+support for custom non-standard symbols. Control measures are planned to
+be included in a future release.
 
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%{_texmfdistdir}/tex/latex/milsymb
-%doc %{_texmfdistdir}/doc/latex/milsymb
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
